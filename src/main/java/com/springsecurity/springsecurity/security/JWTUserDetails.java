@@ -21,43 +21,33 @@ public class JWTUserDetails implements UserDetails {
 		this.authorities=authorities;
 	}
 	
-
-
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-
-
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
 		return username;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
@@ -65,34 +55,17 @@ public class JWTUserDetails implements UserDetails {
 	public String getToken() {
 		return token;
 	}
-
-
 	
-
-
 	public long getId() {
 		return id;
 	}
-
-
-	
 
 	public Collection<? extends GrantedAuthority> getList() {
 		return authorities;
 	}
 
-
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
 		return authorities;
 	}
-
-
-	
-
-	
-	
-
 }

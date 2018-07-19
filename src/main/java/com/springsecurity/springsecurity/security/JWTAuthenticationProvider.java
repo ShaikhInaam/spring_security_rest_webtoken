@@ -22,18 +22,15 @@ public class JWTAuthenticationProvider extends AbstractUserDetailsAuthentication
 	@Autowired
 	private JWTValidator jWTValidator;
 
-	
-
 	@Override
 	public boolean supports(Class<?> aClass) {
-		// TODO Auto-generated method stub
+		
 		return (JWTAuthenticationToken.class.isAssignableFrom(aClass));
 	}
 
 	@Override
 	protected void additionalAuthenticationChecks(UserDetails userDetails,
 			UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -47,12 +44,8 @@ public class JWTAuthenticationProvider extends AbstractUserDetailsAuthentication
 		if(jWTUser==null)
 			throw new ApplicationException(ResponseStatusCode.INCORRECT_TOKEN);
 		
-		
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList(jWTUser.getRole());
-		
-		
 		
 		return new JWTUserDetails(jWTUser.getUsername(), jWTUser.getId(), token , grantedAuthorities);
 	}
-
 }

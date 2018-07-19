@@ -7,7 +7,6 @@ import org.springframework.security.core.GrantedAuthority;
 
 public class JWTAuthenticationToken extends UsernamePasswordAuthenticationToken{
 
-
 	private String token;
 	
 	public JWTAuthenticationToken(String token) {
@@ -34,8 +33,4 @@ public class JWTAuthenticationToken extends UsernamePasswordAuthenticationToken{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-	
-	
 }

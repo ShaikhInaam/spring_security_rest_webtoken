@@ -2,13 +2,11 @@ package com.springsecurity.springsecurity.security;
 
 public class JWTUser {
 	
-	private String username,role;
+	private String username,role,password;
 	private long id;
 
 	public void setUsername(String username) {
-		// TODO Auto-generated method stub
 		this.username=username;
-		
 	}
 
 	public void setRole(String role) {
@@ -30,7 +28,15 @@ public class JWTUser {
 	public long getId() {
 		return id;
 	}
-	
-	
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	
 }

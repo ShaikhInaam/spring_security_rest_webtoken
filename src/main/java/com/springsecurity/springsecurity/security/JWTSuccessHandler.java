@@ -15,7 +15,6 @@ public class JWTSuccessHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication auth)throws IOException, ServletException {
 		
 		
-		
 	}
 
 }

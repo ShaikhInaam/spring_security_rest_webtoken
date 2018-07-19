@@ -31,18 +31,16 @@ import com.springsecurity.springsecurity.enumerations.ResponseStatusCode;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-public class JWTAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter{
+public class JWTAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter {
 	
 	public JWTAuthenticationTokenFilter() {
-		super("/user/**");
-		// TODO Auto-generated constructor stub
+		super("/user/**");	
 	}
 
 	Logger logger = LoggerFactory.getLogger(JWTAuthenticationTokenFilter.class);
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)throws AuthenticationException, IOException, ServletException {
-		
 		
 		String header = request.getHeader("Authorization");
 		logger.info("-----------HEADER = "+header);
@@ -54,19 +52,14 @@ public class JWTAuthenticationTokenFilter extends AbstractAuthenticationProcessi
 		String authenticationToken = header.substring(6);
 		JWTAuthenticationToken token = new JWTAuthenticationToken(authenticationToken);
 		
-		
 		return getAuthenticationManager().authenticate(token);
 	}
-
-
 
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
-		// TODO Auto-generated method stub
 		logger.info("-----------SUCCESSFUL AUTHENTICATION IS WOKING!");
 		super.successfulAuthentication(request, response, chain, authResult);
 		chain.doFilter(request, response);
 	}
-	
 }
